@@ -87,13 +87,3 @@ Tampilan mobile (390px):
 
 ![Dashboard mobile](docs/screenshots/mobile-dashboard.png)
 
-## Test
-
-```bash
-php artisan test
-```
-
-Tujuh test: halaman login tampil, username diteruskan ke dashboard/pengelolaan/
-profile, halaman dalam menolak tanpa username, username terlalu pendek ditolak
-validasi, badge kondisi memakai warna yang benar, dan username aneh di query
-string (array atau emoji kepanjangan) tidak bikin error 500.
