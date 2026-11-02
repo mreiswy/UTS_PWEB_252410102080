@@ -1,0 +1,566 @@
+/* LabKom - style utama
+   Ditulis tangan, tanpa framework CSS. */
+
+:root {
+    --bg: #f6f7f4;
+    --surface: #ffffff;
+    --ink: #1c2321;
+    --muted: #5f6b66;
+    --line: #e2e6e1;
+    --brand: #1f6f5c;
+    --brand-dark: #17574a;
+    --warn: #96631a;
+    --warn-soft: #fbf2e0;
+    --bad: #a33a2c;
+    --bad-soft: #fbe9e6;
+    --ok-soft: #e8f2ed;
+    --radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--ink);
+    font-family:
+        "Segoe UI",
+        system-ui,
+        -apple-system,
+        sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0 0 6px;
+    line-height: 1.25;
+}
+h1 {
+    font-size: 26px;
+    letter-spacing: -0.3px;
+}
+h2 {
+    font-size: 17px;
+}
+p {
+    margin: 0 0 10px;
+}
+a {
+    color: var(--brand);
+    text-decoration: none;
+}
+
+.muted {
+    color: var(--muted);
+}
+.mono {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 13px;
+}
+.right {
+    text-align: right;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ---------- navbar ---------- */
+.nav {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+}
+
+/* navbar selebar layar, isinya tetap dibatasi biar logo dan menu sejajar dengan konten */
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 66px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+}
+
+.brand-mark {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    background: var(--brand);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.brand-logo {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.brand strong {
+    display: block;
+    font-size: 15px;
+}
+.brand small {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    padding: 7px 12px;
+    border-radius: 7px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    background: #eef2ef;
+    color: var(--ink);
+}
+.nav-links a.is-active {
+    color: var(--brand);
+    background: var(--ok-soft);
+    font-weight: 600;
+}
+
+/* ---------- layout ---------- */
+main.wrap {
+    flex: 1 0 auto;
+    padding-top: 28px;
+    padding-bottom: 40px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+}
+
+.page-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--brand);
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 18px;
+    margin-top: 18px;
+    align-items: start;
+}
+
+.two-col > * {
+    min-width: 0;
+}
+
+/* ---------- button ---------- */
+.btn {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: var(--brand);
+    color: #fff;
+}
+.btn-primary:hover {
+    background: var(--brand-dark);
+}
+
+.btn-ghost {
+    border-color: var(--line);
+    color: var(--muted);
+    background: var(--surface);
+}
+.btn-ghost:hover {
+    border-color: var(--muted);
+    color: var(--ink);
+}
+
+/* ---------- login ---------- */
+.login-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    align-items: center;
+    align-content: center;
+    min-height: calc(100vh - 175px);
+    padding: 32px 0;
+}
+
+.login-intro h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.lead {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 46ch;
+}
+
+.checklist {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.checklist li {
+    position: relative;
+    padding-left: 24px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.checklist li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--brand);
+}
+
+.login-card form {
+    display: grid;
+    gap: 6px;
+    margin-top: 14px;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    background: #fcfdfc;
+}
+
+input[type="text"]:focus {
+    outline: 2px solid rgba(31, 111, 92, 0.25);
+    border-color: var(--brand);
+}
+
+.login-card .btn {
+    margin-top: 12px;
+}
+
+.error {
+    margin: 0;
+    color: var(--bad);
+    font-size: 13px;
+}
+
+.hint {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+    color: var(--muted);
+}
+
+/* ---------- stats ---------- */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.stat {
+    display: grid;
+    gap: 2px;
+    padding: 16px 18px;
+}
+.stat-label {
+    font-size: 12.5px;
+    color: var(--muted);
+}
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+.stat-note {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ---------- table ---------- */
+.table-wrap {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.table th,
+.table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+}
+
+.table th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.table tbody tr:hover {
+    background: #fafbfa;
+}
+.table tfoot td {
+    font-weight: 600;
+    border-bottom: none;
+}
+
+/* ---------- badge ---------- */
+.badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-ok {
+    background: var(--ok-soft);
+    color: var(--brand-dark);
+}
+.badge-warn {
+    background: var(--warn-soft);
+    color: var(--warn);
+}
+.badge-bad {
+    background: var(--bad-soft);
+    color: var(--bad);
+}
+
+/* ---------- timeline ---------- */
+.timeline {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0 0 0 14px;
+    border-left: 2px solid var(--line);
+    display: grid;
+    gap: 14px;
+}
+
+.timeline li {
+    font-size: 14px;
+}
+
+.timeline-time {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ---------- profile ---------- */
+.profile-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+}
+
+.profile-head h2 {
+    margin: 0;
+}
+.profile-head p {
+    margin: 0;
+}
+
+.avatar {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--ok-soft);
+    color: var(--brand-dark);
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.detail {
+    margin: 4px 0 0;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+.detail-row dt {
+    margin: 0;
+    color: var(--muted);
+}
+.detail-row dd {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* ---------- footer ---------- */
+.footer {
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    padding: 20px 0 24px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 860px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .two-col {
+        grid-template-columns: 1fr;
+    }
+    .login-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 8px 0 32px;
+    }
+    .login-intro h1 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 620px) {
+    .nav-inner {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    .nav-links {
+        width: 100%;
+        gap: 2px;
+    }
+    .nav-links a {
+        padding: 7px 9px;
+        font-size: 13px;
+    }
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    .page-head {
+        align-items: flex-start;
+    }
+    h1 {
+        font-size: 22px;
+    }
+    .footer-inner {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .table th,
+    .table td {
+        padding: 8px 9px;
+        font-size: 13px;
+    }
+}
+
+/* layar 320px: perkecil padding menu supaya "Keluar" tidak turun baris */
+@media (max-width: 380px) {
+    .nav-links {
+        gap: 0;
+    }
+    .nav-links a {
+        padding: 6px 6px;
+        font-size: 12.5px;
+    }
+    .brand small {
+        display: none;
+    }
+}
